@@ -1,0 +1,132 @@
+body {
+  font-family: "Poppins" !important;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: 900px;
+  margin: auto;
+}
+
+.header {
+  max-height: 140px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+.section {
+  display: flex;
+  width: 100%;
+  padding-top: 50px;
+}
+
+.section-logo {
+  display: flex;
+  width: 30%;
+  padding-right: 10px;
+}
+
+.section-logo img {
+  width: 60%;
+}
+
+.section-title {
+  display: flex;
+  width: 30%;
+  padding-right: 10px;
+}
+
+.section-description {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.separator {
+  display: flex;
+  padding-top: 20px;
+}
+
+.separator-1 {
+  border: 2px solid;
+  width: 5%;
+  margin: unset;
+}
+
+.separator-2 {
+  border: 2px solid;
+  width: 100%;
+  margin: unset;
+}
+
+.personal-info {
+  flex-direction: column;
+  display: flex;
+  justify-content: end;
+  padding-bottom: 10px;
+  gap: 8px;
+}
+
+.position {
+  font-size: 1.17rem;
+  color: #ff9900;
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #0f15fd;
+}
+
+.time {
+  margin-top: 5px;
+  color: gray;
+  font-size: 0.9rem;
+}
+
+.bloc {
+  margin-bottom: 1rem;
+}
+
+.blocs-separator {
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+
+.padding-50 {
+  padding-top: 30px;
+  padding-bottom: 50px;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.blue {
+  color: #0f15fd;
+}
+
+.label-1 {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.label-2 {
+  font-size: 1.2rem;
+}
+
+.link {
+  font-size: 0.9rem;
+  text-decoration: none !important;
+}
+
+a:-webkit-any-link {
+  color: -webkit-link;
+  cursor: pointer;
+  text-decoration: none;
+}
