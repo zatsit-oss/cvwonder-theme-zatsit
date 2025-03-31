@@ -111,15 +111,11 @@
         <div class="section-title title">Dernières expériences</div>
 
         <div class="section-description">
-          {{ $careerLength := len .Career }} {{ range $index, $element :=
-          .Career }}
+          {{- $careerLength := len .Career }}
+          {{ range $indexCareer, $company := .Career }}
+          {{- $missionLength := len $company.Missions }}
           <div class="content">
-            <div class="bloc">
-              <div class="blue label-1"><b>{{$element.CompanyName}}</b></div>
-              <div class="time">{{$element.Duration}}</div>
-            </div>
-
-            {{range $element.Missions}}
+            {{range $indexMission, $mission := $company.Missions}}
             <div>
               <div class="bloc">
                 <div class="position label-2">{{.Position}}</div>
@@ -145,9 +141,10 @@
                 {{ end }}
               </div>
 
-              {{ if ne $index (dec $careerLength) }}
+              {{ if or (ne $indexCareer (dec $careerLength))
+                  (ne $indexMission (dec $missionLength)) }}
               <div class="section-description blocs-separator">
-                <span class="separator-2"></span>
+                <span class="separator-3"></span>
               </div>
               {{ end }}
             </div>
