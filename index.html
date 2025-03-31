@@ -82,12 +82,13 @@
         </div>
       </div>
 
+      <!-- Abstract -->
+      {{- if .Abstract }}
       <div class="separator">
         <div class="section-title"><hr class="separator-1"/></div>
         <div class="section-description"><hr class="separator-2"/></div>
       </div>
 
-      {{- if .Abstract }}
       <div class="section" style="margin-bottom: 20px">
         <div class="section-title title">Abstrait</div>
 
@@ -99,25 +100,22 @@
       </div>
       {{- end }}
 
+      <!-- Career -->
+      {{- if .Career }}
       <div class="separator">
         <div class="section-title"><hr class="separator-1"/></div>
         <div class="section-description"><hr class="separator-2"/></div>
       </div>
 
-      {{- if .Career }}
       <div class="section">
         <div class="section-title title">Dernières expériences</div>
 
         <div class="section-description">
-          {{ $careerLength := len .Career }} {{ range $index, $element :=
-          .Career }}
+          {{- $careerLength := len .Career }}
+          {{ range $indexCareer, $company := .Career }}
+          {{- $missionLength := len $company.Missions }}
           <div class="content">
-            <div class="bloc">
-              <div class="blue label-1"><b>{{$element.CompanyName}}</b></div>
-              <div class="time">{{$element.Duration}}</div>
-            </div>
-
-            {{range $element.Missions}}
+            {{range $indexMission, $mission := $company.Missions}}
             <div>
               <div class="bloc">
                 <div class="position label-2">{{.Position}}</div>
@@ -143,9 +141,10 @@
                 {{ end }}
               </div>
 
-              {{ if ne $index (dec $careerLength) }}
+              {{ if or (ne $indexCareer (dec $careerLength))
+                  (ne $indexMission (dec $missionLength)) }}
               <div class="section-description blocs-separator">
-                <span class="separator-2"></span>
+                <span class="separator-3"></span>
               </div>
               {{ end }}
             </div>
@@ -158,13 +157,13 @@
       </div>
       {{- end }}
 
+      <!-- Education -->
+      {{- if .Education }}
       <div class="separator padding-50">
         <div class="section-title"><hr class="separator-1"/></div>
         <div class="section-description"><hr class="separator-2"/></div>
       </div>
 
-      <!-- Education -->
-      {{- if .Education }}
       <div class="section" style="padding-top: unset !important">
         <div class="section-title title">Formation</div>
         <div class="section-description">
@@ -188,13 +187,15 @@
           {{ end }}
         </div>
       </div>
+      {{- end }}
 
+      <!-- Certifications -->
+      {{- if .Certifications }}
       <div class="separator padding-50">
         <div class="section-title"><hr class="separator-1"/></div>
         <div class="section-description"><hr class="separator-2"/></div>
       </div>
 
-      <!-- Certifications -->
       <div class="section" style="padding-top: unset !important">
         <div class="section-title title">Certifications</div>
         <div class="section-description">
@@ -221,13 +222,15 @@
           {{ end }}
         </div>
       </div>
+      {{- end }}
 
+      <!-- SideProjects -->
+      {{- if .SideProjects }}
       <div class="separator padding-50">
         <div class="section-title"><hr class="separator-1"/></div>
         <div class="section-description"><hr class="separator-2"/></div>
       </div>
 
-      <!-- SideProjects -->
       <div class="section" style="padding-top: unset !important">
         <div class="section-title title">Projets personnels</div>
         <div class="section-description">
@@ -253,7 +256,6 @@
           {{ end }}
         </div>
       </div>
-
       {{- end }}
     </div>
   </body>

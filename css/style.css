@@ -63,6 +63,12 @@ body {
   margin: unset;
 }
 
+.separator-3 {
+  border: 1px solid lightgray;
+  width: 100%;
+  margin: unset;
+}
+
 .personal-info {
   flex-direction: column;
   display: flex;
