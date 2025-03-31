@@ -82,12 +82,13 @@
         </div>
       </div>
 
+      <!-- Abstract -->
+      {{- if .Abstract }}
       <div class="separator">
         <div class="section-title"><hr class="separator-1"/></div>
         <div class="section-description"><hr class="separator-2"/></div>
       </div>
 
-      {{- if .Abstract }}
       <div class="section" style="margin-bottom: 20px">
         <div class="section-title title">Abstrait</div>
 
@@ -99,12 +100,13 @@
       </div>
       {{- end }}
 
+      <!-- Career -->
+      {{- if .Career }}
       <div class="separator">
         <div class="section-title"><hr class="separator-1"/></div>
         <div class="section-description"><hr class="separator-2"/></div>
       </div>
 
-      {{- if .Career }}
       <div class="section">
         <div class="section-title title">Dernières expériences</div>
 
@@ -158,13 +160,13 @@
       </div>
       {{- end }}
 
+      <!-- Education -->
+      {{- if .Education }}
       <div class="separator padding-50">
         <div class="section-title"><hr class="separator-1"/></div>
         <div class="section-description"><hr class="separator-2"/></div>
       </div>
 
-      <!-- Education -->
-      {{- if .Education }}
       <div class="section" style="padding-top: unset !important">
         <div class="section-title title">Formation</div>
         <div class="section-description">
@@ -188,13 +190,15 @@
           {{ end }}
         </div>
       </div>
+      {{- end }}
 
+      <!-- Certifications -->
+      {{- if .Certifications }}
       <div class="separator padding-50">
         <div class="section-title"><hr class="separator-1"/></div>
         <div class="section-description"><hr class="separator-2"/></div>
       </div>
 
-      <!-- Certifications -->
       <div class="section" style="padding-top: unset !important">
         <div class="section-title title">Certifications</div>
         <div class="section-description">
@@ -221,13 +225,15 @@
           {{ end }}
         </div>
       </div>
+      {{- end }}
 
+      <!-- SideProjects -->
+      {{- if .SideProjects }}
       <div class="separator padding-50">
         <div class="section-title"><hr class="separator-1"/></div>
         <div class="section-description"><hr class="separator-2"/></div>
       </div>
 
-      <!-- SideProjects -->
       <div class="section" style="padding-top: unset !important">
         <div class="section-title title">Projets personnels</div>
         <div class="section-description">
@@ -253,7 +259,6 @@
           {{ end }}
         </div>
       </div>
-
       {{- end }}
     </div>
   </body>
