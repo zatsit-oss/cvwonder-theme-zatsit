@@ -1,4 +1,6 @@
+---
 name: zatsit
 slug: zatsit
 description: zatsit theme
 author: zatsit
+minimumVersion: 0.4.0
